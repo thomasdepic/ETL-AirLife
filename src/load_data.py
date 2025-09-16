@@ -105,7 +105,7 @@ def verify_data():
         print(sample_airports.to_string(index=False))
         
         # Show sample flight data (if any exists)
-        Check if flights table has data first
+        #Check if flights table has data first
         sample_flights = pd.read_sql("SELECT callsign, origin_country, altitude FROM flights LIMIT 3", engine)
         if not sample_flights.empty:
             print("\n✈️  Sample flights:")
