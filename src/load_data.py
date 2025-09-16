@@ -40,14 +40,12 @@ def load_to_database(airports_df, flights_df):
     
     try:
         # TODO: Create SQLAlchemy engine
-        # Hint: engine = create_engine(connection_string)
         
         print("⚠️  Database loading not yet implemented")
         return
         
         # TODO: Load airports data
         # Use pandas to_sql method to insert data
-        # Hint: airports_df.to_sql('airports', engine, if_exists='replace', index=False)
         # 
         # Parameters explanation:
         # - 'airports': table name in database
@@ -57,7 +55,6 @@ def load_to_database(airports_df, flights_df):
         
         # TODO: Load flights data (only if not empty)
         # Check if flights_df is not empty before loading
-        # Hint: if not flights_df.empty:
         #           flights_df.to_sql('flights', engine, if_exists='replace', index=False)
         
         # TODO: Print loading statistics
@@ -91,20 +88,16 @@ def verify_data():
         return
         
         # TODO: Count airports in database
-        # Hint: airports_count = pd.read_sql("SELECT COUNT(*) as count FROM airports", engine)
         # print(f"📊 Airports in database: {airports_count.iloc[0]['count']}")
         
         # TODO: Count flights in database  
-        # Hint: flights_count = pd.read_sql("SELECT COUNT(*) as count FROM flights", engine)
         # print(f"📊 Flights in database: {flights_count.iloc[0]['count']}")
         
         # TODO: Show sample airport data
-        # Hint: sample_airports = pd.read_sql("SELECT name, city, country FROM airports LIMIT 3", engine)
         # print("\n📋 Sample airports:")
         # print(sample_airports.to_string(index=False))
         
         # TODO: Show sample flight data (if any exists)
-        # Hint: Check if flights table has data first
         # sample_flights = pd.read_sql("SELECT callsign, origin_country, altitude FROM flights LIMIT 3", engine)
         # if not sample_flights.empty:
         #     print("\n✈️  Sample flights:")
