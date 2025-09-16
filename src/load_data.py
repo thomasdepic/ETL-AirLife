@@ -42,7 +42,6 @@ def load_to_database(airports_df, flights_df):
         # Create SQLAlchemy engine
         engine = create_engine(connection_string)
         
-        print("⚠️  Database loading not yet implemented")
     except Exception as e:
         print(f"Error in load_data : error {e}\n")
         print(f"Could not create engine with connection string \n ::  {connection_string}")
@@ -94,10 +93,11 @@ def verify_data():
     try:
         # Create SQLAlchemy engine
         engine = create_engine(connection_string)
-        
-        print("⚠️  Data verification not yet implemented")
-        return
-        
+    except Exception as e:
+        print(f"Error in load_data : error {e}\n")
+        print(f"Could not create engine with connection string \n ::  {connection_string}")
+    
+    try :
         # Count airports in database
         airports_count = pd.read_sql("SELECT COUNT(*) as count FROM airports", engine)
         print(f"📊 Airports in database: {airports_count.iloc[0]['count']}")
@@ -112,14 +112,14 @@ def verify_data():
         print(sample_airports.to_string(index=False))
         
         # Show sample flight data (if any exists)
-        Check if flights table has data first
+        # Check if flights table has data first
         sample_flights = pd.read_sql("SELECT callsign, origin_country, altitude FROM flights LIMIT 3", engine)
         if not sample_flights.empty:
             print("\n✈️  Sample flights:")
             print(sample_flights.to_string(index=False))
         
     except Exception as e:
-        print(f"❌ Error verifying data: {e}")
+        print(f"Error in load_data: Error verifying data: {e}")
 
 def run_sample_queries():
     """
@@ -132,7 +132,11 @@ def run_sample_queries():
     
     try:
         engine = create_engine(connection_string)
-        
+    except Exception as e:
+        print(f"Error in load_data : error {e}\n")
+        print(f"Could not create engine with connection string \n ::  {connection_string}")
+    
+    try :
         # Query 1: Airports by country
         print("\n🌍 Top 5 countries by number of airports:")
         country_query = """
@@ -205,7 +209,7 @@ def test_database_connection():
             return False
             
     except Exception as e:
-        print(f"❌ Database connection failed: {e}")
+        print(f"Error in load_data : Database connection failed: {e}")
         print("💡 Check your connection settings in DATABASE_CONFIG")
         return False
 
@@ -230,7 +234,7 @@ if __name__ == "__main__":
         
         sample_flights = pd.DataFrame()  # Empty for testing
         
-        # Test loading (won't work until students implement it)
+        # Test loading
         load_to_database(sample_airports, sample_flights)
     else:
         print("Fix database connection before testing loading functions")
