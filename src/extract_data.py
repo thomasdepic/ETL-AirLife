@@ -24,15 +24,16 @@ def extract_airports():
         # TODO: Read the airports.csv file using pandas
         # The file is located at: data/airports.csv
         # Hint: Use pd.read_csv()
+        airports = pd.read_csv("data/airports.csv")
         
         # For now, return an empty DataFrame
-        df = pd.DataFrame()
         
         # TODO: Print how many airports were loaded
         # Example: print(f"Loaded {len(df)} airports")
+        print(f"{len(airports)} aréoports chargés")
         
         print("⚠️  Airport extraction not yet implemented")
-        return df
+        return airports
         
     except Exception as e:
         print(f"❌ Error reading airport data: {e}")
@@ -63,9 +64,20 @@ def extract_flights():
         
         # TODO: Make the API request using requests.get()
         # Hint: response = requests.get(url, params=params, timeout=10)
+        request = requests.get(url,params = params, timeout = 10)
+
         
         # TODO: Check if the response is successful
         # Hint: Check response.status_code == 200
+        if request.status_code == 200 :
+            print("Request successful!")
+            data = request.json()
+            states = data['states'] if data['states'] else []
+        else :
+            print(f"Request failed with status code: {request.status_code}")
+        
+        flights = pd.DataFrame(states)
+        print(f"{len(flights)} vols chargés")
         
         # TODO: Get the JSON data from the response
         # Hint: data = response.json()
@@ -82,7 +94,7 @@ def extract_flights():
         
         # For now, return empty DataFrame
         print("⚠️  Flight extraction not yet implemented")
-        return pd.DataFrame()
+        return flights
         
     except requests.exceptions.RequestException as e:
         print(f"❌ Network error fetching flight data: {e}")
