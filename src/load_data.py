@@ -180,7 +180,12 @@ def test_database_connection():
     
     try:
         engine = create_engine(connection_string)
-        
+        print("engine created")
+    except Exception as e:
+        print(f"Error in load_data (1) : error {e}\n")
+        print(f"Could not create engine with connection string \n ::  {connection_string}")
+    
+    try :
         # Try a simple query
         result = pd.read_sql("SELECT 1 as test", engine)
         
@@ -209,7 +214,7 @@ def test_database_connection():
             return False
             
     except Exception as e:
-        print(f"Error in load_data : Database connection failed: {e}")
+        print(f"Error in load_data (2) : Database connection failed: {e}")
         print("💡 Check your connection settings in DATABASE_CONFIG")
         return False
 
@@ -231,6 +236,7 @@ if __name__ == "__main__":
             'longitude': [2.3522],
             'altitude': [100]
         })
+        print("created dummy dataframe")
         
         sample_flights = pd.DataFrame()  # Empty for testing
         
