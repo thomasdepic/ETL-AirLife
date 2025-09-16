@@ -22,17 +22,11 @@ def extract_airports():
     
     try:
         # TODO: Read the airports.csv file using pandas
-        # The file is located at: data/airports.csv
-        # Hint: Use pd.read_csv()
         airports = pd.read_csv("data/airports.csv")
         
-        # For now, return an empty DataFrame
-        
         # TODO: Print how many airports were loaded
-        # Example: print(f"Loaded {len(df)} airports")
         print(f"{len(airports)} aréoports chargés")
         
-        print("⚠️  Airport extraction not yet implemented")
         return airports
         
     except Exception as e:
@@ -63,34 +57,42 @@ def extract_flights():
         print("Making API request... (this may take a few seconds)")
         
         # TODO: Make the API request using requests.get()
-        # Hint: response = requests.get(url, params=params, timeout=10)
         request = requests.get(url,params = params, timeout = 10)
 
         
         # TODO: Check if the response is successful
-        # Hint: Check response.status_code == 200
         if request.status_code == 200 :
             print("Request successful!")
             data = request.json()
             states = data['states'] if data['states'] else []
+
         else :
             print(f"Request failed with status code: {request.status_code}")
         
-        flights = pd.DataFrame(states)
+        columns = [
+            "icao24", "callsign", "origin_country", "time_position",
+            "last_contact", "longitude", "latitude", "baro_altitude",
+            "on_ground", "velocity", "true_track", "vertical_rate",
+            "sensors", "geo_altitude", "squawk", "spi", "position_source"
+        ]
+
+        keep_columns = [
+            "icao24", "callsign", "origin_country", "time_position",
+            "last_contact", "longitude", "latitude", "baro_altitude",
+            "on_ground", "velocity", "true_track", "vertical_rate"
+        ]
+        
+        flights = pd.DataFrame(states, columns = columns)[keep_columns]
         print(f"{len(flights)} vols chargés")
         
         # TODO: Get the JSON data from the response
         
         # TODO: Extract the 'states' data from the JSON
-        # The API returns: {"time": 123456789, "states": [[aircraft_data], [aircraft_data], ...]}
         
         # TODO: Convert to DataFrame
         
         # TODO: Print how many flights were found
-        # Example: print(f"Found {len(df)} active flights")
-        
-        # For now, return empty DataFrame
-        print("⚠️  Flight extraction not yet implemented")
+
         return flights
         
     except requests.exceptions.RequestException as e:

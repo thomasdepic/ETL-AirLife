@@ -26,10 +26,10 @@ def main():
     # TODO: Call the extraction functions
     airports = extract_airports()
     flights = extract_flights()
+
+    print(flights.head())
     
     # Uncomment the lines above once you've implemented the functions
-    # print("⚠️  Extraction functions not yet implemented")
-    return
     
     # Step 2: Transform data
     print("\n=== TRANSFORMATION ===")
@@ -52,7 +52,7 @@ def main():
     print("✅ Verifying data was loaded correctly...")
     
     # TODO: Call the verification function
-    # verify_data()
+    verify_data()
     
     print("\n🎉 ETL Pipeline completed!")
     print("=" * 50)
