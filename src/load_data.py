@@ -14,7 +14,7 @@ import psycopg2
 # Database connection configuration
 # Update these values with your actual database credentials
 DATABASE_CONFIG = {
-    'username': 'thomas',
+    'username': 'niels',
     'password': '', 
     'host': 'localhost',
     'port': '5433',
@@ -43,8 +43,11 @@ def load_to_database(airports_df, flights_df):
         engine = create_engine(connection_string)
         
         print("⚠️  Database loading not yet implemented")
-        return
-        
+    except Exception as e:
+        print(f"Error in load_data : error {e}\n")
+        print(f"Could not create engine with connection string \n ::  {connection_string}")
+    
+    try :
         # Load airports data
         # Use pandas to_sql method to insert data
         airports_df.to_sql('airports', engine, if_exists='replace', index=False)
@@ -61,15 +64,19 @@ def load_to_database(airports_df, flights_df):
         flights_df.to_sql('flights', engine, if_exists='replace', index=False)
         
         # Print loading statistics
-        print(f"✅ Loaded {len(airports_df)} airports to database")
-        if not flights_df.empty:
-            print(f"✅ Loaded {len(flights_df)} flights to database")
+        if not flights_df.empty :
+            print(f"yihouuu : Loaded {len(airports_df)} airports to database")
         else:
-            print("ℹ️  No flight data to load")
+            print("No airport data to load in sql, panda dataframe was empty")
+
+        if not flights_df.empty:
+            print(f"yihouu : Loaded {len(flights_df)} flights to database")
+        else:
+            print("No flight data to load in sql, panda dataframe was empty")
         
 
     except Exception as e:
-        print(f"*!* Error loading data to database: {e}")
+        print(f"Error in load_data : Error loading data to database: {e}")
         print("Make sure:")
         print("   - PostgreSQL is running")
         print("   - Database 'airlife_db' exists") 
