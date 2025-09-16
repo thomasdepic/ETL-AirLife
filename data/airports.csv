@@ -1,0 +1,51 @@
+id,name,city,country,iata_code,icao_code,latitude,longitude,altitude
+1,"Charles de Gaulle Airport","Paris","France","CDG","LFPG",49.012779,2.55,392
+2,"London Heathrow Airport","London","United Kingdom","LHR","EGLL",51.4706,-0.461941,83
+3,"Amsterdam Airport Schiphol","Amsterdam","Netherlands","AMS","EHAM",52.308601,4.76389,-11
+4,"Frankfurt Airport","Frankfurt","Germany","FRA","EDDF",50.033333,8.570556,364
+5,"Madrid Barajas Airport","Madrid","Spain","MAD","LEMD",40.471926,-3.56264,1998
+6,"Munich Airport","Munich","Germany","MUC","EDDM",48.353802,11.7861,1487
+7,"Rome Fiumicino Airport","Rome","Italy","FCO","LIRF",41.8003,12.2389,13
+8,"Barcelona Airport","Barcelona","Spain","BCN","LEBL",41.2971,2.07846,12
+9,"Vienna International Airport","Vienna","Austria","VIE","LOWW",48.110298,16.5697,600
+10,"Zurich Airport","Zurich","Switzerland","ZUR","LSZH",47.464699,8.54917,1416
+11,"Brussels Airport","Brussels","Belgium","BRU","EBBR",50.901401,4.48444,184
+12,"Copenhagen Airport","Copenhagen","Denmark","CPH","EKCH",55.617901,12.656,17
+13,"Stockholm Arlanda Airport","Stockholm","Sweden","ARN","ESSA",59.651901,17.9186,137
+14,"Oslo Airport","Oslo","Norway","OSL","ENGM",60.193901,11.1004,681
+15,"Helsinki Airport","Helsinki","Finland","HEL","EFHK",60.317199,24.963301,179
+16,"Dublin Airport","Dublin","Ireland","DUB","EIDW",53.421299,-6.27007,242
+17,"Manchester Airport","Manchester","United Kingdom","MAN","EGCC",53.35369,-2.27495,256
+18,"Edinburgh Airport","Edinburgh","United Kingdom","EDI","EGPH",55.95,-3.3725,135
+19,"Glasgow Airport","Glasgow","United Kingdom","GLA","EGPF",55.871899,-4.43306,26
+20,"Birmingham Airport","Birmingham","United Kingdom","BHX","EGBB",52.453899,-1.74803,327
+21,"Lyon Airport","Lyon","France","LYS","LFLL",45.726398,5.09077,821
+22,"Marseille Airport","Marseille","France","MRS","LFML",43.439271,5.22142,74
+23,"Nice Airport","Nice","France","NCE","LFMN",43.658401,7.21587,12
+24,"Toulouse Airport","Toulouse","France","TLS","LFBO",43.629101,1.36382,499
+25,"Berlin Brandenburg Airport","Berlin","Germany","BER","EDDB",52.351601,13.4939,157
+26,"Düsseldorf Airport","Düsseldorf","Germany","DUS","EDDL",51.289501,6.76678,147
+27,"Hamburg Airport","Hamburg","Germany","HAM","EDDH",53.630401,9.9882,53
+28,"Stuttgart Airport","Stuttgart","Germany","STR","EDDS",48.689899,9.22196,1276
+29,"Cologne Bonn Airport","Cologne","Germany","CGN","EDDK",50.865898,7.14274,302
+30,"Milan Malpensa Airport","Milan","Italy","MXP","LIMC",45.6306,8.72811,768
+31,"Milan Linate Airport","Milan","Italy","LIN","LIML",45.445099,9.27674,353
+32,"Venice Airport","Venice","Italy","VCE","LIPZ",45.505299,12.3519,7
+33,"Naples Airport","Naples","Italy","NAP","LIRN",40.886002,14.2908,294
+34,"Turin Airport","Turin","Italy","TRN","LIMF",45.200802,7.64963,989
+35,"Palma de Mallorca Airport","Palma","Spain","PMI","LEPA",39.551701,2.73881,24
+36,"Seville Airport","Seville","Spain","SVQ","LEZL",37.418,-5.89311,111
+37,"Valencia Airport","Valencia","Spain","VLC","LEVC",39.489349,-0.481625,240
+38,"Bilbao Airport","Bilbao","Spain","BIO","LEBB",43.301098,-2.91056,138
+39,"Porto Airport","Porto","Portugal","OPO","LPPR",41.237801,-8.67056,228
+40,"Lisbon Airport","Lisbon","Portugal","LIS","LPPT",38.7813,-9.13592,374
+41,"Prague Airport","Prague","Czech Republic","PRG","LKPR",50.1008,14.26,1247
+42,"Warsaw Airport","Warsaw","Poland","WAW","EPWA",52.165699,20.967121,362
+43,"Krakow Airport","Krakow","Poland","KRK","EPKK",50.077702,19.7848,791
+44,"Budapest Airport","Budapest","Hungary","BUD","LHBP",47.42976,19.261093,495
+45,"Bucharest Airport","Bucharest","Romania","OTP","LROP",44.5711,26.085,314
+46,"Sofia Airport","Sofia","Bulgaria","SOF","LBSF",42.6969,23.4114,1742
+47,"Athens Airport","Athens","Greece","ATH","LGAV",37.9364,23.9445,266
+48,"Thessaloniki Airport","Thessaloniki","Greece","SKG","LGTS",40.519699,22.9709,22
+49,"Invalid Airport 1","Nowhere","Invalid","XXX","XXXX",999,999,0
+50,"Invalid Airport 2","Missing Data","Test","\\N","",48.0,2.0,
